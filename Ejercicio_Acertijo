@@ -1,0 +1,39 @@
+Estudiantes:
+-Alonso Vega.
+-Sebastian Morales.
+
+El Sr. Ido, el químico, tiene seis frascos llenos de líquidos coloreados. Hay uno de cada color: rojo, anaranjado, amarillo, verde, azul y violeta. El señor Ido sabe que algunos de esos líquidos son tóxicos, pero no recuerda cuales... Sin embargo, sí recuerda algunos datos.
+En cada uno de los siguientes pares de frascos hay uno con veneno y otro no:
+
+los frascos violeta y azul
+los frascos rojo y amarillo
+los frascos azul y anaranjado
+
+El Sr. Ido recuerda también que en estos otros pares de frascos hay uno sin veneno:
+el violeta y el amarillo
+
+el rojo y el anaranjado
+
+el verde y el azul
+
+Además, el líquido del frasco rojo no es venenoso. ¿Qué frascos tienen veneno?
+
+CODGIO:
+
+par(violeta,azul).
+par(rojo,amarillo).
+par(azul,anaranjado).
+
+par2(violeta,amarillo).
+par2(rojo,anaranjado).
+par2(verde,azul).
+
+veneno(amarillo).
+
+veneno(X):-(par(X,Y),noVeneno(Y));par(Y,X),noVeneno(Y).
+
+noVeneno(Y):-(par2(Y,X),veneno(X));(par2(X,Y),veneno(X)).
+
+noVeneno(rojo).
+
+Consultar por veneno(X), para mostrar los frascos con liquido venenosos.
